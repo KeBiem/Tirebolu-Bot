@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
       if(!breportschannel) return message.channel.send("Could not find bugs channel.");
 
 
-      message.delete().catch(O_o=>{});
+      message.delete();
       reportschannel.send(breportEmbed);
 
 
