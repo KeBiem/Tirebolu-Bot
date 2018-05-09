@@ -17,9 +17,9 @@ let helpEmbed = new Discord.RichEmbed()
 .addField("**-fortnite <EPIC_NAME> <PLATFORM>**", '*Gets your fortnite stats.* ***(PLATFORM: pc or psn or xb)***')
 .addField("**-google <SEARCH TERM>**", '*Gives a LMGTFY link with the searched term.*')
 .addField("**-randomurban**", '*Returns a random definition from the Urban Dictionary.*')
+.addField("**-rps <ROCK | PAPER | SCISSORS>**", '*Play rock/paper/scissors with the bot.*')
 .addField("**-urban <SEARCH TERM>**", '*Searches the Urban Dictionary, then returns the results.*')
 .addField("**-weather <CITY>**", '*Get the weather information from a city.*');
-
 
 let helpsEmbed = new Discord.RichEmbed()
 .setTitle("**General Commands (10)**")
