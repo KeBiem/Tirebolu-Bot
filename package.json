@@ -4,7 +4,7 @@
   "description": "My own Discord Bot",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js"
   },
   "author": "Kerim",
   "license": "ISC",
