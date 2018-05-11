@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 // Command Handler
 exports.run = async (bot, message, args, tools) => {
 
+  let jsicon = "https://discord.js.org/static/logo-square.png";
     // Variables
     let servers = bot.guilds.size; // Server Count
     let users = 0; // Start of user count
@@ -17,7 +18,9 @@ exports.run = async (bot, message, args, tools) => {
         .setColor('#42f4d9')
         .addField('Servers', servers, true)
         .addField('Users', users, true)
-        .addField('Channels', channels, true);
+        .addField('Channels', channels, true)
+        .setTimestamp()
+        .setFooter("Tirebolu ©2018", jsicon);
 
     // Send Embed
     message.channel.send(embed);
