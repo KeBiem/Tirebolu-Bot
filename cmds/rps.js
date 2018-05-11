@@ -5,8 +5,10 @@ return Math.random() * (high + 1 - low) + low | 0;
 }
 
 module.exports.run = async (bot, message, args) => {
+  let rps = args[0].toLowerCase();
 
-  if (args[0]) {
+  if (rps === "rock" || rps === "paper" || rps === "scissors" ) {
+  //if (args[0]) {
     // get user choice && user choice
     let computer_choice = rand(0,2);
     let user_choice = args[0] == "rock" ? 1 : args[0] == "paper" ? 2 : 0;
