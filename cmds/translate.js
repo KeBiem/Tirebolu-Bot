@@ -5,6 +5,8 @@ const Langs = ['afrikaans','albanian','amharic','arabic','armenian','azerbaijani
 
 module.exports.run = async (bot, message, args) => {
 
+  let jsicon = "https://discord.js.org/static/logo-square.png";
+
   if (args[0] === undefined) {
 
     const embed = new Discord.RichEmbed()
@@ -34,7 +36,9 @@ module.exports.run = async (bot, message, args) => {
         const embed = new Discord.RichEmbed()
         .setDescription(res.text)
         .setFooter(`english -> ${transArg}`)
-        .setColor(`RANDOM`);
+        .setColor(`RANDOM`)
+        .setTimestamp()
+        .setFooter("Tirebolu ©2018", jsicon);
         return message.channel.send(embed);
 
       });
