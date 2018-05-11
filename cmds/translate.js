@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   if (args[0] === undefined) {
 
     const embed = new Discord.RichEmbed()
-    .setColor("FFFFFF")
+    .setColor("#ffffff")
     .setDescription("**Provide a language and some text for bot to translate.**\nUsage: `PREFIXX translate <language> <text>`");
 
     return message.channel.send(embed);
@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
         const embed = new Discord.RichEmbed()
         .setDescription(res.text)
         .setFooter(`english -> ${transArg}`)
-        .setColor(`RANDOM`)
+        .setColor(`#0745ff`)
         .setTimestamp()
         .setFooter("Tirebolu ©2018", jsicon);
         return message.channel.send(embed);
