@@ -39,7 +39,7 @@ let helpsEmbed = new Discord.RichEmbed()
 .addField("**-ping**", '*Gives the ping of the bot.*')
 .addField("**-say <WORD OR SENTENCE>**", '*Let Tirebolu message your word or sentence.*')
 .addField("**-serverinfo**", '*View info about your current server.*')
-.addField("**-shorten <URL>**", "*Shorten your links.*")
+.addField("**-shorten <URL> (TITLE)**", "*Shorten your links.*")
 .addField("**-statistics", '*Get the statistics of Tirebolu.*')
 .addField("**-unban <USER ID> <REASON>**", '*Unban a user from a server.* ***(Create a text-channel with the name incident)***')
 .addField('**-userinfo (USER MENTION)**', '*View info about a user or yourself.*');
