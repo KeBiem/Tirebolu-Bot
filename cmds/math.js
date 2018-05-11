@@ -3,9 +3,12 @@ const Discord = require('discord.js'),
 
 exports.run = (bot, message, args, tools) => {
 
+  let jsicon = "https://discord.js.org/static/logo-square.png";
     // Form Embed
     const embed = new Discord.RichEmbed()
-        .setColor(0xffffff);
+        .setColor(0xffffff)
+        .setTimestamp()
+        .setFooter("Tirebolu ©2018", jsicon);
 
     // Verify Input
     if (!args[0]) {
