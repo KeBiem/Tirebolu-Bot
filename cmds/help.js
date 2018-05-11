@@ -10,7 +10,7 @@ let fhelpEmbed = new Discord.RichEmbed()
 
 
 let helpEmbed = new Discord.RichEmbed()
-.setTitle("**Fun commands (14)**")
+.setTitle("**Fun commands (16)**")
 .addField("**-8ball**",'*Ask the great one a question and get an answer back.*')
 .addField("**-cat**", '*Generate a picture of a random cat.*')
 .addField("**-dog**", '*Generate a picture of a random dog.*')
@@ -25,6 +25,7 @@ let helpEmbed = new Discord.RichEmbed()
 .addField("**-rps <ROCK | PAPER | SCISSORS>**", '*Play rock/paper/scissors with the bot.*')
 //.addField("**-spotify (USER MENTION)**", '*Information about the song that you or the user you mentioned listens to.*')
 .addField("**-translate <LANGUAGE> <TEXT>**", '*Translate from English to an other language.*')
+.addField("**-trump**", "*Gives random trump quotes.*")
 .addField("**-urban <SEARCH TERM>**", '*Searches the Urban Dictionary, then returns the results.*')
 .addField("**-weather <CITY>**", '*Get the weather information from a city.*');
 
