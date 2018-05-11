@@ -83,4 +83,4 @@ bot.on('guildMemberRemove', async member => {
 });
 
 
-bot.login(botconfig.token)
+bot.login(process.env.BOT_TOKEN);
