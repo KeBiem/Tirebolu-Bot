@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   // The command will take one require argument, and one optional (link, title)
 
   // We also want to check if they typed anything at all, if not run this
-  if (!args[0]) return message.channel.send('**Proper Usage: !shorten <URL> [title]**')
+  if (!args[0]) return message.channel.send('**Proper Usage: -shorten <URL> [title]**')
 
   // First, we need to check if they entered an optional title
   if (!args[1]) { // If the second argument in the message is undefined, run this
