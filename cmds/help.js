@@ -15,11 +15,12 @@ let helpEmbed = new Discord.RichEmbed()
 .addField("**-cat**", '*Generate a picture of a random cat.*')
 .addField("**-dog**", '*Generate a picture of a random dog.*')
 .addField("**-fortnite <EPIC_NAME> <PLATFORM>**", '*Gets your fortnite stats.* ***(PLATFORM: pc or psn or xb)***')
+.addField("**-gif <GIF SEARCH TERM>**", '*Gives a gif with the searched term.*')
 .addField("**-google <SEARCH TERM>**", '*Gives a LMGTFY link with the searched term.*')
 .addField("**-randomurban**", '*Returns a random definition from the Urban Dictionary.*')
 .addField("**-roll (NUMBER)**", '*Roll a dice from 1 to a number you provide. If no number is provided, rolls from 1 to 6.*')
 .addField("**-rps <ROCK | PAPER | SCISSORS>**", '*Play rock/paper/scissors with the bot.*')
-.addField("**-spotify (USER MENTION)**", '*Information about the song that you or the user you mentioned listens to.*')
+//.addField("**-spotify (USER MENTION)**", '*Information about the song that you or the user you mentioned listens to.*')
 .addField("**-urban <SEARCH TERM>**", '*Searches the Urban Dictionary, then returns the results.*')
 .addField("**-weather <CITY>**", '*Get the weather information from a city.*');
 
