@@ -5,8 +5,8 @@ const fs = require("fs");
 const prefix = botconfig.prefix
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-//let cooldown = new Set();
-//let cdseconds = 5;
+let cooldown = new Set();
+let cdseconds = 5;
 
 fs.readdir("./cmds/", (err, files) => {
   if(err) console.error(err);
@@ -29,7 +29,7 @@ fs.readdir("./cmds/", (err, files) => {
 
 bot.on('ready', async () => {
   console.log(`Bot is ready! ${bot.user.username}`);
-  bot.user.setActivity(`with ${bot.guilds.size} servers | -help`);
+  bot.user.setActivity(`**with ${bot.guilds.size} servers | -help**`);
 
   try {
     let link = await bot.generateInvite(["ADMINISTRATOR"]);
@@ -44,13 +44,13 @@ bot.on('message', async message => {
   if(message.channel.type === "dm") return message.channel.send("Error 404!");
 
 
- // if(cooldown.has(message.author.id)){
- //  message.delete();
- //   return message.reply("You have to wait 5 seconds between commands.")
+//  if(cooldown.has(message.author.id)){
+//    message.delete();
+//    return message.reply("You have to wait 5 seconds between commands.")
 //  }
-//  if(!message.member.hasPermission("ADMINISTRATOR")){
-//    cooldown.add(message.author.id);
-//  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+  //  cooldown.add(message.author.id);
+  //}
 
   let messageArray = message.content.split(" ");
   let command = messageArray[0];
@@ -63,7 +63,8 @@ bot.on('message', async message => {
 
 //  setTimeout(() => {
 //   cooldown.delete(message.author.id)
-// }, cdseconds * 1000)
+//}, cdseconds * 1000)
+
 });
 
 bot.on('guildMemberAdd', async member => {
@@ -82,4 +83,4 @@ bot.on('guildMemberRemove', async member => {
 });
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(botconfig.token)
