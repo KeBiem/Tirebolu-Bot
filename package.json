@@ -4,19 +4,23 @@
   "description": "My own Discord Bot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "node index.js"
   },
   "author": "Kerim",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
     "fortnite": "^3.0.0",
+    "gif-search": "^2.0.1",
+    "google-translate-api": "^2.3.0",
+    "math-expression-evaluator": "^1.2.17",
     "moment": "^2.22.1",
     "ms": "^2.1.1",
     "snekfetch": "^4.0.0",
     "strict-uri-encode": "^2.0.0",
     "superagent": "^3.8.3",
     "urban": "^0.3.1",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^0.20.3"
   }
 }
