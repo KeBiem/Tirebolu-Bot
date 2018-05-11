@@ -30,7 +30,7 @@ let helpEmbed = new Discord.RichEmbed()
 .addField("**-weather <CITY>**", '*Get the weather information from a city.*');
 
 let helpsEmbed = new Discord.RichEmbed()
-.setTitle("**General Commands (11)**")
+.setTitle("**General Commands (12)**")
 .addField("**-avatar (USER MENTION)**", `*Fetches someone's avatar (or your own, if no user was provided).*`)
 .addField("**-botinfo**", '*View info about the bot.*')
 .addField("**-findusers <SEARCH TERM>**", `*Search all of the bot's cached users for a username/tag.*`)
