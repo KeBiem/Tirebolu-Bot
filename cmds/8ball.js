@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   let ballembed = new Discord.RichEmbed()
   .setAuthor(message.author.tag)
   .setColor("#000000")
-  .addField("Qustion", question)
+  .addField("Question", question)
   .addField("Answer", replies[result])
   .setTimestamp()
   .setFooter("Tirebolu ©2018", jsicon);
