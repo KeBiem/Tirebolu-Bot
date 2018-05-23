@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 function play(connection, message) {
-    var server = servers[message.guild.id];
+    const server = servers[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
     server.queue.shift();
     server.dispatcher.on("end", function() {
@@ -9,7 +9,7 @@ function play(connection, message) {
         else connection.disconnect();
     })
 }
-var servers = {};
+const servers = {};
 module.exports.run = async (bot, message, args) => {
     //play
     if (!args[0]) {
