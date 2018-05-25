@@ -8,6 +8,19 @@ bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
 
+const YTDL = require("ytdl-core");
+function play(connection, message) {
+    var server = servers[message.guild.id];
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+    server.queue.shift();
+    server.dispatcher.on("end", function() {
+        if(server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    })
+}
+var servers = {};
+
+
 fs.readdir("./cmds/", (err, files) => {
   if(err) console.error(err);
 
@@ -65,6 +78,42 @@ bot.on('message', async message => {
 //   cooldown.delete(message.author.id)
 //}, cdseconds * 1000)
 
+
+if(command === `${prefix}play`) {
+  //play
+  if (!args[0]) {
+       message.channel.send("Please specify a link");
+       return
+  }
+
+  if(!message.member.voiceChannel) {
+      message.channel.send("I think it may work better if you are in a voice channel!");
+  }
+
+  if(!servers[message.guild.id]) servers[message.guild.id] = {
+      queue: []
+  };
+
+  var server = servers[message.guild.id];
+
+  server.queue.push(args[0]);
+  message.channel.send("Your song of choice is on the queue. ")
+  if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+      play(connection, message);
+  })
+}
+
+if(command === `${prefix}skip`) {
+  var server = servers[message.guild.id];
+  if (server.dispatcher) server.dispatcher.end();
+}
+if(command === `${prefix}stop`) {
+  var server = servers[message.guild.id];
+
+  if(message.guild.voiceConnection) message.member.voiceChannel.leave();
+  message.channel.send("Left the Voice Channel!");
+}
+
 });
 
 bot.on('guildMemberAdd', async member => {
@@ -83,4 +132,4 @@ bot.on('guildMemberRemove', async member => {
 });
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(botconfig.token)
