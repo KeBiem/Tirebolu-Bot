@@ -9,6 +9,11 @@ let cooldown = new Set();
 let cdseconds = 5;
 
 const YTDL = require("ytdl-core");
+const search = require('youtube-search');
+const opts = {
+  maxResults: 1,
+  key: 'AIzaSyDuVJRDmsz4bruONKaFdrh2smuSQWOnQ2Q'
+};
 function play(connection, message) {
     var server = servers[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
@@ -78,7 +83,7 @@ bot.on('message', async message => {
 //   cooldown.delete(message.author.id)
 //}, cdseconds * 1000)
 
-
+//music commands
 if(command === `${prefix}play`) {
   //play
   if (!args[0]) {
