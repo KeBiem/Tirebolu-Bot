@@ -9,11 +9,7 @@ let cooldown = new Set();
 let cdseconds = 5;
 
 const YTDL = require("ytdl-core");
-const search = require('youtube-search');
-const opts = {
-  maxResults: 1,
-  key: 'AIzaSyDuVJRDmsz4bruONKaFdrh2smuSQWOnQ2Q'
-};
+
 function play(connection, message) {
     var server = servers[message.guild.id];
     server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
@@ -155,4 +151,4 @@ bot.on('guildMemberRemove', async member => {
 });
 
 
-bot.login(botconfig.token)
+bot.login(process.env.BOT_TOKEN)
