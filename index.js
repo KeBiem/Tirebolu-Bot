@@ -102,7 +102,6 @@ if(command === `${prefix}play`) {
       play(connection, message);
   })
 }
-
 if(command === `${prefix}skip`) {
   var server = servers[message.guild.id];
   if (server.dispatcher) server.dispatcher.end();
@@ -112,6 +111,25 @@ if(command === `${prefix}stop`) {
 
   if(message.guild.voiceConnection) message.member.voiceChannel.leave();
   message.channel.send("Left the Voice Channel!");
+}
+if(command === `${prefix}pause`){
+  var server = servers[message.guild.id];
+  if(server.dispatcher) server.dispatcher.pause();
+}
+if(command === `${prefix}resume`){
+  var server = servers[message.guild.id];
+  if(server.dispatcher) server.dispatcher.resume();
+}
+if(command === `${prefix}volume`){
+
+  let number = args[0];
+  if(!number) return message.channel.send("Please provide the volume %!");
+  let onumber = number / 100;
+  console.log(onumber);
+
+   var server = servers[message.guild.id];
+   if(server.dispatcher) server.dispatcher.setVolume(onumber);
+
 }
 
 });
