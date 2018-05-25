@@ -10,9 +10,10 @@ function play(connection, message) {
     })
 }
 var servers = {};
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (bot, message, args) => {
     var server = servers[message.guild.id];
-    if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+    if(message.member.voiceChannel.leave) message.member.voiceChannel.leave();
+    message.channel.send("Left the Voice Channel!");
 }
 
 module.exports.help = {

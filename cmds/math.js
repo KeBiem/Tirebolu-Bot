@@ -3,18 +3,12 @@ const Discord = require('discord.js'),
 
 exports.run = (bot, message, args, tools) => {
 
-  let jsicon = "https://discord.js.org/static/logo-square.png";
-    // Form Embed
-    const embed = new Discord.RichEmbed()
-        .setColor(0xffffff)
-        .setTimestamp()
-        .setFooter("Tirebolu ©2018", jsicon);
 
     // Verify Input
     if (!args[0]) {
 
         // Configure Embed
-        embed.setFooter('Please input an expression.');
+        message.channel.send('Please input an expression.');
 
         // Return & Send Embed
         return message.channel.send(embed);
@@ -29,17 +23,23 @@ exports.run = (bot, message, args, tools) => {
 
     } catch (e) { // This will catch any errors in the expression
 
-        result = 'Error: "Invalid Input"';
+        result = '***Error: "Invalid Input"***';
 
     }
 
 
+    let wEmbed = new Discord.RichEmbed()
+    .addField("Input", `${args.join(' ')}`)
+    .addField("Output", `${result}`)
+    .setColor('RANDOM')
+    .setTimestamp()
+		.setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`);
     // Configure Embed
-    embed.addField('Input', `\`\`\`js\n${args.join(' ')}\`\`\``)
-         .addField('Output', `\`\`\`js\n${result}\`\`\``);
+    //embed.addField('Input', `\`\`\`js\n${args.join(' ')}\`\`\``)
+    //     .addField('Output', `\`\`\`js\n${result}\`\`\``);
 
     // Send Embed
-    message.channel.send(embed);
+    message.channel.send(wEmbed);
 
 }
 

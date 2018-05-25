@@ -1,4 +1,3 @@
-//skip
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 function play(connection, message) {
@@ -11,7 +10,7 @@ function play(connection, message) {
     })
 }
 var servers = {};
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (bot, message, args) => {
     //skip
     var server = servers[message.guild.id];
     if (server.dispatcher) server.dispatcher.end();

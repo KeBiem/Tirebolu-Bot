@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
     try {
     await kUser.send(`You are kicked from ${message.guild.name}! \nReason: ${kReason}`);
   }catch(e) {
-      message.channel.send(`<@${message.author.id}> Warning: Could not send this user a DM informing them of their kick. They likely have messages turned off.`);
+      message.channel.send(`<@${message.author.id}> Warning: Could not send this user a DM informing them of their ban. They likely have messages turned off.`);
     }
 
     await message.guild.member(kUser).kick(kReason);

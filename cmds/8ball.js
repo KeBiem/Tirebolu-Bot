@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-  let jsicon = "https://discord.js.org/static/logo-square.png"
   //!8ball <question Is ... gay?>
   if(!args[2]) return message.reply("Ask a full question!");
   let replies = ["Yes.", "No.", "Not Probable.", "Probably.", "Maybe"];
@@ -11,12 +10,11 @@ module.exports.run = async (bot, message, args) => {
   let question = args.slice(0).join(" ");
 
   let ballembed = new Discord.RichEmbed()
-  .setAuthor(message.author.tag)
   .setColor("#000000")
-  .addField("Question", question)
-  .addField("Answer", replies[result])
+  .setTitle(question)
+  .setDescription(replies[result])
   .setTimestamp()
-  .setFooter("Tirebolu ©2018", jsicon);
+  .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`);
 
   message.channel.send(ballembed);
 }
